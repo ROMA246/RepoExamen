@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="estilos/estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salto del Div al Hacer Clic</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #000000;
+    }
+    .cuadrado {
+      width: 500px;
+      height: 500px;
+      background-color: #ff0000;
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%); 
+      transition: transform 0.3s ease-in-out; 
+    }
+    .salto {
+      transform: translate(-100PX, -100PX) scale(1.2); 
+    }
+  </style>
+</head>
+<body>
+  <div class="cuadrado" id="cuadrado"></div>
+
+  <script>
+    const cuadrado = document.getElementById('cuadrado'); 
+
+    
+    function saltarCuadrado() {
+      
+      cuadrado.classList.add('salto');
+
+      
+      setTimeout(() => {
+        cuadrado.classList.remove('salto');
+      }, 300); 
+    }
+
+   
+    document.body.addEventListener('click', saltarCuadrado);
+  </script>
+</body>
+</html>
